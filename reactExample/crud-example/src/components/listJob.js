@@ -7,10 +7,8 @@ class listJob extends React.Component {
 		this.state = {jobs: []};
 		this.headers = [
 			{ key: 'id', label: 'Id'},
-			{ key: 'jobName', label: 'Job Name' },
-			{ key: 'linkContent', label: 'Link Content' },
-			{ key: 'status', label: 'Status' },
-			{ key: 'show', label: 'Hiển thị' }
+			{ key: 'name', label: 'Job Name' },
+			{ key: 'status', label: 'Status' }
 		];
 		this.deleteJob = this.deleteJob.bind(this);
 	}
@@ -71,10 +69,8 @@ class listJob extends React.Component {
 							return (
 								<tr key = {key}>
 								  <td>{item.id}</td>
-								  <td>{item.jobName}</td>
-								  <td>{item.linkContent}</td>
+								  <td>{item.name}</td>
 								  <td>{item.status}</td>
-								  <td>{item.show}</td>
 								  <td>
 										<Link to={`/update/${item.id}`}>Edit</Link>
 										 
