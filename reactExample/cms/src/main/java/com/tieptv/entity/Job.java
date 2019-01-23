@@ -19,7 +19,7 @@ public class Job {
 	@Column(name = "name", columnDefinition = "nvarchar(50)", nullable = false)
 	private String name;
 	@Column(name = "status", columnDefinition = "nvarchar(50)", nullable = true)
-	private int status;
+	private String status;
 	public int getId() {
 		return id;
 	}
@@ -32,10 +32,10 @@ public class Job {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getStatus() {
+	public String getStatus() {
 		return status;
 	}
-	public void setStatus(int status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 }

@@ -14,30 +14,30 @@ class listJob extends React.Component {
 	}
 	
 	componentDidMount() {
-		fetch('http://localhost:8080/api/list-job')
+		fetch('http://localhost:8080/job/list')
 			.then(response => { 
-				return response.json();
+				return response;
 			}).then(result => {
 				console.log(result);
 				this.setState({
-					roles:result
+					jobs:result
 				});
 			});
 	}
 	
 	deleteJob(id) {
 		if(window.confirm("Are you sure want to delete?")) {
-			fetch('http://localhost:8080/api/delete-job/' + id)
+			fetch('http://localhost:8080/api/job/delete/' + id)
 				.then(response => { 
 					if(response.status === 200) {
 						alert("Website deleted successfully");
-                                                fetch('http://localhost:8080/api/list-job')
+                                                fetch('http://localhost:8080/job/list')
 						.then(response => {
 							return response.json();
 						}).then(result => {
 							console.log(result);
 							this.setState({
-								roles:result
+								jobs:result
 							});
 						});
 					} 

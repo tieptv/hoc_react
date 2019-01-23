@@ -1,6 +1,7 @@
 package com.tieptv.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +16,7 @@ import com.tieptv.entity.Job;
 public class JobController {
   @Autowired
   private JobService jobService;
-	@GetMapping(value=ConstantPage.REST_API_GET_ALL_JOB)
+	@GetMapping(value=ConstantPage.REST_API_GET_ALL_JOB, produces={ MediaType.APPLICATION_PROBLEM_JSON_VALUE })
 	public List<Job> listJob() {
 		return jobService.getAll();
 	}

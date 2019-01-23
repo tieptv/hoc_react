@@ -15,7 +15,7 @@ class Create extends React.Component {
   }
   handleSubmit(event) {
 	  event.preventDefault();
-	  fetch('http://localhost:8080/api/job/add', {
+	  fetch('http://localhost:8080/job/insert', {
 			method: 'POST',
 			body: JSON.stringify({
 							title: this.state.title,
@@ -38,11 +38,11 @@ class Create extends React.Component {
 			  <form onSubmit={this.handleSubmit}>
 				<p>
 					<label>Title:</label>
-					<input type="text" name="title" value={this.state.title} onChange={this.handleChange} placeholder="Title" />
+					<input type="text" name="title" value={this.state.name} onChange={this.handleChange} placeholder="Title" />
 				</p>
 				<p>
 					<label>URL:</label>
-					<input type="text" name="url" value={this.state.url} onChange={this.handleChange} placeholder="URL" />
+					<input type="text" name="url" value={this.state.status} onChange={this.handleChange} placeholder="URL" />
 				</p>
 				<p>
 					<input type="submit" value="Submit" />
