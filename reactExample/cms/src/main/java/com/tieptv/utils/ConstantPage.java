@@ -16,6 +16,7 @@ public class ConstantPage {
 	public static final String REST_API_DELETE_JOB_BY_ID = "/job/delete/{id}";
 	public static final String REST_API_UPDATE_JOB = "/job/update";
 	public static final String REST_API_FILTER_JOB_BY_NAME = "/job/search";
+	public static final String REST_API_GET_JOB_BY_ID = "job/findById/{id}";
 
 
 }
