@@ -28,6 +28,14 @@ class Update extends React.Component {
 	  this.setState(state);
   }
   handleSubmit(event) {
+		// eslint-disable-next-line no-unused-vars
+		var body= JSON.stringify({
+			id:this.state.id,
+			name: this.state.name,
+			status: this.state.status
+}) 
+    // eslint-disable-next-line no-undef
+    formData= new FormData();
 	  event.preventDefault();
 	  fetch('http://localhost:8080/job/update/', {
 			method: 'POST',
@@ -55,11 +63,11 @@ class Update extends React.Component {
 					<input type="hidden" name="id" value={this.state.id}/>
 						<p>
 						<label>Name:</label>
-							<input type="text" name="title" value={this.state.name} onChange={this.handleChange} placeholder="Name" />
+							<input type="text" name="name" value={this.state.name} onChange={this.handleChange} placeholder="Name" />
 						</p>
 						<p>
 							<label>Status:</label>
-							<input type="text" name="url" value={this.state.status} onChange={this.handleChange} placeholder="Status" />
+							<input type="text" name="status" value={this.state.status} onChange={this.handleChange} placeholder="Status" />
 						</p>
 						<p>
 							<input type="submit" value="Submit" />

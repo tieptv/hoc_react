@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.tieptv.service.JobService;
@@ -29,13 +30,7 @@ public class JobController {
 		return jobService.getAll();
 	}
 	@PostMapping(value=ConstantPage.REST_API_INSERT_JOB, produces={ MediaType.APPLICATION_PROBLEM_JSON_VALUE })
-	public  ResponseEntity<Object>  insertJob(@RequestParam String data) {
-		JSONObject jsonObject = new JSONObject(data);
-		String name= jsonObject.getString("name");
-		String status = jsonObject.getString("status");
-		Job job= new Job();
-		job.setName(name);
-		job.setStatus(status);
+	public  ResponseEntity<Object>  insertJob(@RequestBody Job job) {
 		try {
 		jobService.insert(job);
 		return new ResponseEntity<>(true,HttpStatus.OK);

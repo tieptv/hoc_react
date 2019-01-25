@@ -14,12 +14,13 @@ class Create extends React.Component {
 	  this.setState(state);
   }
   handleSubmit(event) {
-	  event.preventDefault();
+		event.preventDefault();
+		// eslint-disable-next-line no-unused-vars
 	  fetch('http://localhost:8080/job/insert', {
 			method: 'POST',
-			body: JSON.stringify({
-							title: this.state.title,
-							url: this.state.url
+		  body: JSON.stringify({
+							name: this.state.name,
+							status: this.state.status
 			}),
 			headers: {
 							"Content-type": "application/json; charset=UTF-8"
@@ -37,12 +38,12 @@ class Create extends React.Component {
 			  <p/>
 			  <form onSubmit={this.handleSubmit}>
 				<p>
-					<label>Title:</label>
-					<input type="text" name="title" value={this.state.name} onChange={this.handleChange} placeholder="Title" />
+					<label>Name:</label>
+					<input type="text" name="name" value={this.state.name} onChange={this.handleChange} placeholder="Name" />
 				</p>
 				<p>
-					<label>URL:</label>
-					<input type="text" name="url" value={this.state.status} onChange={this.handleChange} placeholder="URL" />
+					<label>Status:</label>
+					<input type="text" name="status" value={this.state.status} onChange={this.handleChange} placeholder="Status" />
 				</p>
 				<p>
 					<input type="submit" value="Submit" />
