@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from "redux";
-import book_reducer from '../reducer/book_reducer';
+import job_reducer from '../reducer/job_reducer';
 import thunk from 'redux-thunk';
  
 export default () => {
-    return createStore(book_reducer, applyMiddleware(thunk));
+    return createStore(job_reducer, applyMiddleware(thunk));
 };

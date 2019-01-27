@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -49,7 +50,7 @@ public class JobController {
 		}
 	}
 	
-	@GetMapping(value=ConstantPage.REST_API_DELETE_JOB_BY_ID, produces={ MediaType.APPLICATION_PROBLEM_JSON_VALUE })
+	@DeleteMapping(value=ConstantPage.REST_API_DELETE_JOB_BY_ID, produces={ MediaType.APPLICATION_PROBLEM_JSON_VALUE })
 	public void deleteJob(@PathVariable int id) {
 	 jobService.delete(id);
 	}

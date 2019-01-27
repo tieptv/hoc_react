@@ -29,8 +29,9 @@ const _removeJob = ({ id } = {}) => ({
 });
  
 export const removeJob = ({ id } = {}) => {
+    console.log(id);
     return (dispatch) => {
-        return axios.delete('job/delete/${id}').then(() => {
+        return axios.delete(`job/delete/${id}`).then(() => {
             dispatch(_removeJob({ id }));
         })
     }
