@@ -4,10 +4,7 @@ const jobsReducerDefaultState = [];
 export default (state = jobsReducerDefaultState, action) => {
     switch (action.type) {
         case 'ADD_JOB':
-            return [
-                ...state,
-                action.job
-            ];
+            return [...state,action.job];
         case 'REMOVE_JOB':
             return state.filter(({ id }) => id !== action.id);
         case 'EDIT_JOB':

@@ -7,7 +7,7 @@ const Job = ({ id, name,status, dispatch }) => (
     <div>
         <h4>Name: {name}</h4>
         <p>Status: {status}</p>
-        <button >Edit</button>
+        <Link to={`job/${id}`}>Edit</Link>
         <button onClick={() => {
             dispatch(removeJob({ id }));
         }}>Remove</button>

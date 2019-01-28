@@ -11,8 +11,8 @@ public class JobServiceImpl implements JobService {
   @Autowired
   private JobRepository jobRepository;
 	@Override
-	public void insert(Job job) {
-		jobRepository.save(job);
+	public Job insert(Job job) {
+		return jobRepository.save(job);
 	}
 
 	@Override

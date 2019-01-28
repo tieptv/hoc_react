@@ -16,7 +16,7 @@ export const addJob = (jobData = {
             status: jobData.status,
            
         };
- 
+       console.log('ADD ');
         return axios.post('job/insert', job).then(result => {
             dispatch(_addJob(result.data));
         });
@@ -29,7 +29,6 @@ const _removeJob = ({ id } = {}) => ({
 });
  
 export const removeJob = ({ id } = {}) => {
-    console.log(id);
     return (dispatch) => {
         return axios.delete(`job/delete/${id}`).then(() => {
             dispatch(_removeJob({ id }));

@@ -1,11 +1,14 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Job from './job';
  
 const JobList = (props) => (
     <div>
-        Job List:
+        <Link to={'job/insert'}>Insert Job</Link>
+        <br></br>
+        <div><h2>Job List:</h2></div>
         <ul>
             {props.jobs.map(job => {
                 return (
@@ -19,6 +22,7 @@ const JobList = (props) => (
     </div>
 );
 const mapStateToProps = (state) => {
+    console.log(state);
     return {
        jobs : state
     };

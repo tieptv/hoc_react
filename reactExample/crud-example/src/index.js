@@ -14,7 +14,7 @@ const template = (
         <AppRouter />
     </Provider>
 );
- 
 store.dispatch(getJobs()).then(() => {
     ReactDOM.render(template, document.getElementById('app'));
-}) ;                                                                                                                                                                                                                                                                                                                                                
+}) ;    
+                                                                                                                                                                                                                                                                                                                                          
