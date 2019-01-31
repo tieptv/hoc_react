@@ -17,7 +17,7 @@ class  ButtonComponent extends React.Component{
          <button onClick={()=>this.onButtonClick("cara")} className="color-button">Cara Delevingne</button>
          <button onClick={()=>this.onButtonClick("hera")} className="color-button">Hera Hilmar</button>
          <button onClick={()=>this.onButtonClick("leila")} className="color-button">Leila George D'Onofrio</button>
-         <button onClick={()=>this.onButtonClick("nara")} className="color-button">Narar</button>
+         <button onClick={()=>this.onButtonClick("nara")} className="color-button">Nara</button>
      </div>
      )
  }
